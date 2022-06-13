@@ -11,10 +11,14 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addOneHandler = e => {
-    e.preventDefault
-    return dispatch(actions.addOne())
-  } 
+  // const addOneHandler = e => {
+  //   e.preventDefault
+  //   return dispatch(actions.addOne())
+  // } 
+
+  const applyNumHandler = e => {
+    return dispatch(actions.applyNumber(e.target.value))
+  }
 
   return (
     <div className="App">
@@ -39,21 +43,21 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={addOneHandler}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={applyNumHandler}/>
+              <CalcButton value={2} onClick={applyNumHandler}/>
+              <CalcButton value={3} onClick={applyNumHandler}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={applyNumHandler}/>
+              <CalcButton value={5} onClick={applyNumHandler}/>
+              <CalcButton value={6} onClick={applyNumHandler}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={applyNumHandler}/>
+              <CalcButton value={8} onClick={applyNumHandler}/>
+              <CalcButton value={9} onClick={applyNumHandler}/>
             </div>
 
             <div className="row">
