@@ -20,6 +20,14 @@ function App() {
     return dispatch(actions.applyNumber(e.target.value))
   }
 
+  const handleChangeOperator = e => {
+    return dispatch(actions.changeOperation(e.target.value));
+  }
+
+  const handleClear =() => {
+    return dispatch(actions.clearDisplay())
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -61,13 +69,13 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={handleChangeOperator}/>
+              <CalcButton value={"*"} onClick={handleChangeOperator}/>
+              <CalcButton value={"-"} onClick={handleChangeOperator}/>
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={handleClear}/>
             </div>
 
           </form>
